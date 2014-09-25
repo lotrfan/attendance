@@ -49,7 +49,9 @@ var App = React.createClass({
             home: function() {
                 self.setState({
                     route: 'home',
-                    view: <HomeView handleNav={self.handleNav} />
+                    view: <HomeView
+                        handleNav={self.handleNav}
+                        navigateTo={self.navigateTo} />
                 });
             },
             login: function() {

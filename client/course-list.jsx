@@ -10,6 +10,7 @@ var baseUrl = require('../baseurl');
  */
 var CourseList = React.createClass({
     propTypes: {
+        navigateTo: React.PropTypes.func.isRequired,
         handleNav: React.PropTypes.func.isRequired
     },
 
@@ -26,6 +27,9 @@ var CourseList = React.createClass({
                 loading: false,
                 courses: data.courses
             });
+            if (data.courses.length == 1) {
+                this.props.navigateTo('/courses/' + data.courses[0].id);
+            }
         }.bind(this));
     },
 

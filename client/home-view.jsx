@@ -9,12 +9,15 @@ var CourseList = require('./course-list.jsx');
  */
 var HomeView = React.createClass({
     propTypes: {
-        handleNav: React.PropTypes.func.isRequired
+        handleNav: React.PropTypes.func.isRequired,
+        navigateTo: React.PropTypes.func.isRequired
     },
 
     render: function() {
         return <div>
-            <CourseList handleNav={this.props.handleNav} />
+            <CourseList
+                handleNav={this.props.handleNav}
+                navigateTo={this.props.navigateTo} />
         </div>;
     }
 });
